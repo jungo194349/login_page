@@ -1,0 +1,21 @@
+.alert_box_1 {
+    background: rgb(143, 154, 255);
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}
+.alert_box_1 p{
+    display: inline;
+}
+.login_box {
+    background: lightcyan;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+}
+.title {
+    background: lightcyan;
+    padding: 5px;
+    border-radius: 5px;
+}

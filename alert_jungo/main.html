@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+
+        <!-- alert1 -->
+        <div class="alert_box_1" id="alert_box_1">
+            <p id="alert_box_1_title">ID empty</p>
+            <button id="alert_box_1_closebt">X</button>
+        </div>
+
+        <!-- title -->
+        <div class="title">
+            <h1>Login by GODAN account</h1>
+            <h4>all service by one account, GODAN account</h4>
+            <h3>you need login to use this service</h3>
+        </div><br>
+
+        <!-- login box -->
+        <div id="login_box" class="login_box">
+            id : <input id="id"><br>
+            Password : <input id="password">
+            <button id="login_bt">Login</button>
+        </div>
+
+        <button onclick="alert1('block', 'ID Empty')">open id none</button>
+        <button onclick="alert1('block', 'Password Empty')">open p.w. none</button>
+        
+        <script>
+            
+            // alert close button
+            $('#alert_box_1_closebt').on('click', function(){
+               alert1('none')
+            });
+
+            // document.getElementById('login_bt').addEventListener('click', function(){
+            //     id = $('#id').
+            // });
+            //alert display
+            function alert1(statue, display){
+                $('#alert_box_1').css('display', statue);
+                $('#alert_box_1_title').text(display);
+            }
+
+        </script>
+        
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    </body>
+</html>
