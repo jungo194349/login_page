@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- 2024/06/23 build -->
         <meta charset="UTF-8">
         <title>Test</title>
         <link rel="stylesheet" href="main.css">
@@ -22,28 +23,46 @@
 
         <!-- login box -->
         <div id="login_box" class="login_box">
-            id : <input id="id"><br>
-            Password : <input id="password">
+            ID : <input id="id"><br>
+            PW : <input id="password">
             <button id="login_bt">Login</button>
         </div>
 
-        <button onclick="alert1('block', 'ID Empty')">open id none</button>
-        <button onclick="alert1('block', 'Password Empty')">open p.w. none</button>
+
+        <!-- <button onclick="alert1('block', 'ID Empty')">open id none</button>
+        <button onclick="alert1('block', 'Password Empty')">open p.w. none</button> -->
         
         <script>
             
             // alert close button
-            $('#alert_box_1_closebt').on('click', function(){
-               alert1('none')
+
+            document.getElementById("alert_box_1_closebt").addEventListener('click', function(){
+                alert1('none')
             });
 
-            // document.getElementById('login_bt').addEventListener('click', function(){
-            //     id = $('#id').
-            // });
+            // if pw or id not empty
+
+            document.getElementById('login_bt').addEventListener('click', function(){
+                id_value = document.getElementById("id").value
+                pw_value = document.getElementById("password").value
+                if (id_value == "") {
+                    alert1('block', 'Login failed : ID Empty', 'rgb(252, 103, 103');
+                    console.log("wow")
+                } else {
+                    if (pw_value == "") {
+                        alert1('block', 'Login failed : Password Empty', 'rgb(252, 103, 103');
+                    } else {
+                        alert1('block', 'login complete', 'rgb(143, 154, 255');
+                    }
+                }
+            });
+
+
             //alert display
-            function alert1(statue, display){
+            function alert1(statue, display, bgcolor){
                 $('#alert_box_1').css('display', statue);
                 $('#alert_box_1_title').text(display);
+                // $('#alert_box_1').css('background', bgcolor); <-- todo : 이것때문에 ㅅㅂ 실행이 안됨 바꿀것!
             }
 
         </script>
