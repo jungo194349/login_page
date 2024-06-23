@@ -8,6 +8,9 @@
 .alert_box_1 p{
     display: inline;
 }
+.alert_box_1_title {
+    font-size: 25px;
+}
 .login_box {
     background: lightcyan;
     color: black;
@@ -18,4 +21,18 @@
     background: lightcyan;
     padding: 5px;
     border-radius: 5px;
+}
+.alert_box_1_closebt {
+    background: none;
+    border: none;
+    float: right;
+}
+.title_title {
+    display: table;
+    font-size: 40px;
+    text-align: center;
+}
+.title_title p{
+    display: table-cell;
+
 }

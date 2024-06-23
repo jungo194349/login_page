@@ -10,14 +10,22 @@
 
         <!-- alert1 -->
         <div class="alert_box_1" id="alert_box_1">
-            <p id="alert_box_1_title">ID empty</p>
-            <button id="alert_box_1_closebt">X</button>
+            <p id="alert_box_1_title" class="alert_box_1_title">Error : Empty Message</p>
+            <button id="alert_box_1_closebt" class="alert_box_1_closebt">
+                <svg width="30" height="30">
+                    <image href="image/close_icon.png" height="30" width="30"/>
+                </svg>
+            </button>
         </div>
 
         <!-- title -->
         <div class="title">
-            <h1>Login by GODAN account</h1>
-            <h4>all service by one account, GODAN account</h4>
+            <div class="title_title">
+                <svg width="50" height="50">
+                    <image href="image/icon.png" height="50" width="50"/>
+                </svg>
+                <p>Login by GODAN account</p>
+            </div>
             <h3>you need login to use this service</h3>
         </div><br>
 
@@ -28,6 +36,9 @@
             <button id="login_bt">Login</button>
         </div>
 
+        <!-- <button class="alert_box_1_closebt"><svg width="50" height="50">
+            <image href="image/close_icon.png" height="50" width="50"/>
+        </svg></button> -->
 
         <!-- <button onclick="alert1('block', 'ID Empty')">open id none</button>
         <button onclick="alert1('block', 'Password Empty')">open p.w. none</button> -->
@@ -46,23 +57,35 @@
                 id_value = document.getElementById("id").value
                 pw_value = document.getElementById("password").value
                 if (id_value == "") {
+                    if (pw_value == ""){
+                    //id랑 p둘다 없을때
+                    alert1('block', 'Login failed : ID&Password Empty', 'rgb(252, 103, 103');
+                    console.warn("Login failed : ID&Password Empty")
+                    } else {
+                    //id만 없을때
                     alert1('block', 'Login failed : ID Empty', 'rgb(252, 103, 103');
-                    console.log("wow")
+                    console.warn("Login failed : ID Empty") 
+                    }
                 } else {
                     if (pw_value == "") {
+                        //password만 없을때
                         alert1('block', 'Login failed : Password Empty', 'rgb(252, 103, 103');
+                        console.warn("Login failed : Password Empty")
                     } else {
                         alert1('block', 'login complete', 'rgb(143, 154, 255');
+                        console.log("login complete")
                     }
                 }
             });
 
 
-            //alert display
+            //alert1 display
+
             function alert1(statue, display, bgcolor){
                 $('#alert_box_1').css('display', statue);
                 $('#alert_box_1_title').text(display);
-                // $('#alert_box_1').css('background', bgcolor); <-- todo : 이것때문에 ㅅㅂ 실행이 안됨 바꿀것!
+                $('#alert_box_1').css('background', bgcolor);
+                console.log("alert1 updated staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor )
             }
 
         </script>
