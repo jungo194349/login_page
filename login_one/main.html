@@ -8,15 +8,18 @@
     </head>
     <body>
 
-        <!-- alert1 -->
-        <div class="alert_box_1" id="alert_box_1">
-            <p id="alert_box_1_title" class="alert_box_1_title">Error : Empty Message</p>
-            <button id="alert_box_1_closebt" class="alert_box_1_closebt">
-                <svg width="30" height="30">
-                    <image href="image/close_icon.png" height="30" width="30"/>
-                </svg>
-            </button>
+        <!-- new overlay (old alert_box_1) -->
+        <div class="overlay" id="overlay">
+            <div class="box">
+                <h2 id="alert_box_1_type">Empty Overlay Box</h2>
+                <p id="alert_box_1_title" class="alert_box_1_title">Error : Empty Message</p>
+                <button class="close-btn" id="close-btn">Close</button>
+            </div>
         </div>
+    
+        <!-- <button onclick="openOverlay()">Open Overlay</button> -->
+    
+
 
         <!-- title -->
         <div class="title">
@@ -31,23 +34,19 @@
 
         <!-- login box -->
         <div id="login_box" class="login_box">
-            ID : <input id="id"><br>
-            PW : <input id="password">
-            <button id="login_bt">Login</button>
+                <label for="fname">ID or Email</label>
+                <input type="text" id="id"><br/>
+                <label for="lname">Password</label>
+                <input type="text" id="password">
+                <button id="login_bt">Login</button>
+            
         </div>
 
-        <!-- <button class="alert_box_1_closebt"><svg width="50" height="50">
-            <image href="image/close_icon.png" height="50" width="50"/>
-        </svg></button> -->
-
-        <!-- <button onclick="alert1('block', 'ID Empty')">open id none</button>
-        <button onclick="alert1('block', 'Password Empty')">open p.w. none</button> -->
-        
         <script>
             
             // alert close button
 
-            document.getElementById("alert_box_1_closebt").addEventListener('click', function(){
+            document.getElementById("close-btn").addEventListener('click', function(){
                 alert1('none')
             });
 
@@ -59,32 +58,36 @@
                 if (id_value == "") {
                     if (pw_value == ""){
                     //id랑 p둘다 없을때
-                    alert1('block', 'Login failed : ID&Password Empty', 'rgb(252, 103, 103');
+                    alert1('flex', 'ID&Password Empty', 'rgb(252, 103, 103', 'Login failed');
                     console.warn("Login failed : ID&Password Empty")
                     } else {
                     //id만 없을때
-                    alert1('block', 'Login failed : ID Empty', 'rgb(252, 103, 103');
+                    alert1('flex', 'ID Empty', 'rgb(252, 103, 103', 'Login failed');
                     console.warn("Login failed : ID Empty") 
                     }
                 } else {
                     if (pw_value == "") {
                         //password만 없을때
-                        alert1('block', 'Login failed : Password Empty', 'rgb(252, 103, 103');
+                        alert1('flex', 'Password Empty', 'rgb(252, 103, 103', 'Login failed');
                         console.warn("Login failed : Password Empty")
                     } else {
-                        alert1('block', 'login complete', 'rgb(143, 154, 255');
+                        alert1('flex', 'login complete', 'rgb(143, 154, 255', 'Good News!');
                         console.log("login complete")
                     }
                 }
+                wait
             });
 
 
             //alert1 display
 
-            function alert1(statue, display, bgcolor){
-                $('#alert_box_1').css('display', statue);
+            function alert1(statue, display, bgcolor, type){
+                // document.getElementById('overlay').style.display = 'flex';
+                $('#overlay').css('display',statue)
+                // $('#alert_box_1').css('display', statue);
                 $('#alert_box_1_title').text(display);
-                $('#alert_box_1').css('background', bgcolor);
+                $('#close-btn').css('background-color', bgcolor);
+                $('#alert_box_1_type').text(type);
                 console.log("alert1 updated staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor )
             }
 

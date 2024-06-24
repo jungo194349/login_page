@@ -1,31 +1,13 @@
-.alert_box_1 {
-    background: rgb(139, 245, 255);
-    color: black;
-    padding: 20px;
-    border-radius: 5px;
-    display: none;
-}
-.alert_box_1 p{
-    display: inline;
-}
-.alert_box_1_title {
-    font-size: 25px;
-}
 .login_box {
     background: lightcyan;
     color: black;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .title {
     background: lightcyan;
     padding: 5px;
-    border-radius: 5px;
-}
-.alert_box_1_closebt {
-    background: none;
-    border: none;
-    float: right;
+    border-radius: 8px;
 }
 .title_title {
     display: table;
@@ -35,4 +17,61 @@
 .title_title p{
     display: table-cell;
 
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid cyan;
+    border-radius: 8px;
+  }
+  input[type=text]:focus {
+    border: 3px solid darkcyan;
+    background-color: rgb(206, 243, 255);
+  }
+  #login_bt {
+    background-color: white;
+    border: 2px solid cyan;
+    color: black;
+    padding: 12px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  #login_bt:hover {
+    background-color: rgb(206, 243, 255);
+  }
+  /* The overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it covers everything else */
+    display: none; /* Initially hidden */
+}
+
+/* The box */
+.box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.close-btn {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
 }
