@@ -42,6 +42,14 @@
             
         </div>
 
+        <br><br><br>
+
+        <!-- id and pw 4 test -->
+        <div class="title">
+            <p>ID and Password for test</p>
+            <p>ID : Admin , PW : Admin</p>
+        </div>
+
         <script>
             
             // alert close button
@@ -71,8 +79,7 @@
                         alert1('flex', 'Password Empty', 'rgb(252, 103, 103', 'Login failed');
                         console.warn("Login failed : Password Empty")
                     } else {
-                        alert1('flex', 'login complete', 'rgb(143, 154, 255', 'Good News!');
-                        console.log("login complete")
+                        login()
                     }
                 }
                 wait
@@ -89,6 +96,22 @@
                 $('#close-btn').css('background-color', bgcolor);
                 $('#alert_box_1_type').text(type);
                 console.log("alert1 updated staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor )
+            }
+
+            //ck id and password
+
+            function login() {
+                id_value = document.getElementById("id").value
+                pw_value = document.getElementById("password").value
+                if (id_value == 'Admin' && pw_value == 'Admin') {
+                    // id & pw가 맞음
+                    alert1('flex', 'login complete', 'rgb(143, 154, 255', 'Good News!');
+                    console.log("login complete")
+                } else {
+                    // id or pw가 틀림
+                    alert1('flex', 'ID or Password incorrect', 'rgb(252, 103, 103', 'Login failed');
+                    console.warn("Login failed : ID or Password incorrect")
+                }
             }
 
         </script>
