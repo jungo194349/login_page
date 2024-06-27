@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- 2024/06/23 build -->
         <meta charset="UTF-8">
         <title>Login by GODAN account</title>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
 
-        <!-- new overlay (old alert_box_1) -->
+        <!-- new overlay (aka. alert_box_1) -->
         <div class="overlay" id="overlay">
             <div class="box">
                 <h2 id="alert_box_1_type">Empty Overlay Box</h2>
@@ -56,9 +55,8 @@
 
             document.getElementById("close-btn").addEventListener('click', function(){
                 alert1('none')
-                if (localStorage.getItem('isLoggedIn')) {
+                if (localStorage.getItem('isLoggedIn') == 'true') {
                     window.location.href = 'main_page.html';
-                    console.log(localStorage.getItem('isLoggedIn'))
                 }
             });
 
@@ -86,7 +84,6 @@
                         login()
                     }
                 }
-                wait
             });
 
 
@@ -99,7 +96,7 @@
                 $('#alert_box_1_title').text(display);
                 $('#close-btn').css('background-color', bgcolor);
                 $('#alert_box_1_type').text(type);
-                console.log("alert1 updated staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor )
+                console.log("alert1 updated staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor + ", type : " + type)
             }
 
             //ck id and password
@@ -109,10 +106,10 @@
                 pw_value = document.getElementById("password").value
                 if (id_value == 'Admin' && pw_value == 'Admin') {
                     // id & pw가 맞음
+                    localStorage.setItem('isLoggedIn', 'true');
+                    console.log('now isLoggedIn is : '+ localStorage.getItem('isLoggedIn') )
                     alert1('flex', 'login complete', 'rgb(143, 154, 255', 'Good News!');
-                    console.log("login complete")
-                    localStorage.setItem('isLoggedIn', True);
-                    console.log('now isLoggedIn is : '+localStorage.getItem('isLoggedIn'))
+                    
                 } else {
                     // id or pw가 틀림
                     alert1('flex', 'ID or Password incorrect', 'rgb(252, 103, 103', 'Login failed');

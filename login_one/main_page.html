@@ -9,33 +9,31 @@
         <div class="title">
             <p>Main Page</p>
             <div id="loginForm" class="hidden">
-                <button onclick="login()">로그인</button>
+                <button onclick="login()">Login</button>
             </div>
             <div id="logoutForm" class="hidden">
-                <button onclick="logout()">로그아웃</button>
+                <button onclick="logout()">Logout</button>
             </div>
         </div>
-        <button onclick="localStorage.setItem('isLoggedIn', True);">isLoggedIn = true</button>
-        <button onclick="localStorage.setItem('isLoggedIn', False);">isLoggedIn = False</button>
-    
     <script>
         // 로그인 상태를 확인하고 UI를 업데이트하는 함수
         function checkLoginStatus() {
-            isLoggedIn = localStorage.getItem('IsLoggedIn')
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             document.getElementById('loginForm').classList.toggle('hidden', isLoggedIn);
             document.getElementById('logoutForm').classList.toggle('hidden', !isLoggedIn);
         }
 
-        // 로그인 함수
+
+        // 로그인 버튼 함수
         function login() {
-            
-            checkLoginStatus();
-            window.location.href = 'main.html'
+            console.log('Move to login page...')
+            window.location.href = 'main.html';
         }
 
-        // 로그아웃 함수
+        // 로그아웃 버튼 함수
         function logout() {
-            localStorage.setItem('isLoggedIn', False);
+            console.log('Logout complete')
+            localStorage.setItem('isLoggedIn', 'false');
             checkLoginStatus();
         }
 
