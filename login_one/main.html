@@ -3,7 +3,7 @@
     <head>
         <!-- 2024/06/23 build -->
         <meta charset="UTF-8">
-        <title>Test</title>
+        <title>Login by GODAN account</title>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
@@ -56,6 +56,10 @@
 
             document.getElementById("close-btn").addEventListener('click', function(){
                 alert1('none')
+                if (localStorage.getItem('isLoggedIn')) {
+                    window.location.href = 'main_page.html';
+                    console.log(localStorage.getItem('isLoggedIn'))
+                }
             });
 
             // if pw or id not empty
@@ -107,6 +111,8 @@
                     // id & pw가 맞음
                     alert1('flex', 'login complete', 'rgb(143, 154, 255', 'Good News!');
                     console.log("login complete")
+                    localStorage.setItem('isLoggedIn', True);
+                    console.log('now isLoggedIn is : '+localStorage.getItem('isLoggedIn'))
                 } else {
                     // id or pw가 틀림
                     alert1('flex', 'ID or Password incorrect', 'rgb(252, 103, 103', 'Login failed');

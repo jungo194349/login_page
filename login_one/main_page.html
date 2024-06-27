@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Main page</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="title">
+            <p>Main Page</p>
+            <div id="loginForm" class="hidden">
+                <button onclick="login()">로그인</button>
+            </div>
+            <div id="logoutForm" class="hidden">
+                <button onclick="logout()">로그아웃</button>
+            </div>
+        </div>
+        <button onclick="localStorage.setItem('isLoggedIn', True);">isLoggedIn = true</button>
+        <button onclick="localStorage.setItem('isLoggedIn', False);">isLoggedIn = False</button>
+    
+    <script>
+        // 로그인 상태를 확인하고 UI를 업데이트하는 함수
+        function checkLoginStatus() {
+            isLoggedIn = localStorage.getItem('IsLoggedIn')
+            document.getElementById('loginForm').classList.toggle('hidden', isLoggedIn);
+            document.getElementById('logoutForm').classList.toggle('hidden', !isLoggedIn);
+        }
+
+        // 로그인 함수
+        function login() {
+            
+            checkLoginStatus();
+            window.location.href = 'main.html'
+        }
+
+        // 로그아웃 함수
+        function logout() {
+            localStorage.setItem('isLoggedIn', False);
+            checkLoginStatus();
+        }
+
+        // 페이지 로드 시 로그인 상태 확인
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+    </script>
+    </body>
+</html>
