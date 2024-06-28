@@ -9,6 +9,12 @@
     padding: 5px;
     border-radius: 8px;
 }
+.logined {
+    background: orange;
+    padding: 5px;
+    border-radius: 8px;
+    display: none;
+}
 .title_title {
     display: table;
     font-size: 40px;

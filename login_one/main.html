@@ -26,9 +26,15 @@
                 <svg width="50" height="50">
                     <image href="image/icon.png" height="50" width="50"/>
                 </svg>
-                <p>Login by GODAN account</p>
+                <p>GODAN account로 로그인</p>
             </div>
-            <h3>you need login to use this service</h3>
+            <h3>해당 서비스를 이용하기 위해 로그인이 필요합니다.</h3>
+        </div><br>
+
+        <!-- login 되있으면 표시되는 상자 -->
+        <div class="logined" id="logined">
+            <h2>이미 로그인이 되어있습니다.</h2>
+            <h3>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h3>
         </div><br>
 
         <!-- login box -->
@@ -45,7 +51,7 @@
 
         <!-- id and pw 4 test -->
         <div class="title">
-            <p>ID and Password for test</p>
+            <p>test용 ID & PW</p>
             <p>ID : Admin , PW : Admin</p>
         </div>
 
@@ -116,6 +122,17 @@
                     console.warn("Login failed : ID or Password incorrect")
                 }
             }
+
+            //로그인 되있으면 안내문 표시
+            function loginck() {
+                if (localStorage.getItem('isLoggedIn') == 'true') {
+                    // $('#logined').css('display','block')
+                    document.getElementById('logined').style.display = 'block'
+                }
+            }
+
+            //페이지 로드시 loginck 실행
+            document.addEventListener('DOMContentLoaded', loginck())
 
         </script>
         
