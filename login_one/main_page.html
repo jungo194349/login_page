@@ -4,41 +4,26 @@
         <meta charset="UTF-8">
         <title>Main page</title>
         <link rel="stylesheet" href="main.css">
+        <link rel=""
     </head>
     <body>
         <div class="title">
-            <p>GODAN : home</p>
+            <p>Main Page</p>
             <div id="loginForm" class="hidden">
-                <button onclick="login()">Login</button>
+                <button class='login_bt' onclick="login()">Login</button>
             </div>
             <div id="logoutForm" class="hidden">
-                <button onclick="logout()">Logout</button>
+                <button class='login_bt' onclick="logout()">Logout</button>
             </div>
+        </div><br>
+        <div class="title">
+            <p>(메인 패이지 내용)</p>
         </div>
-    <script>
-        // 로그인 상태를 확인하고 UI를 업데이트하는 함수
-        function checkLoginStatus() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-            document.getElementById('loginForm').classList.toggle('hidden', isLoggedIn);
-            document.getElementById('logoutForm').classList.toggle('hidden', !isLoggedIn);
-        }
 
-
-        // 로그인 버튼 함수
-        function login() {
-            console.log('Move to login page...')
-            window.location.href = 'main.html';
-        }
-
-        // 로그아웃 버튼 함수
-        function logout() {
-            console.log('Logout complete')
-            localStorage.setItem('isLoggedIn', 'false');
-            checkLoginStatus();
-        }
-
-        // 페이지 로드 시 로그인 상태 확인
-        document.addEventListener('DOMContentLoaded', checkLoginStatus);
-    </script>
+        <!-- Main.js 첨부 -->
+        <script src="main.js"></script>
+        <!-- jquery 첨부 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
     </body>
 </html>
