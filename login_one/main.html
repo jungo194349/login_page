@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>Login by GODAN account</title>
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+</head>
     </head>
     <body>
 
@@ -16,38 +18,32 @@
             </div>
         </div>
     
-        <!-- <button onclick="openOverlay()">Open Overlay</button> -->
-    
-
-
         <!-- title -->
         <div class="title">
-            <div class="title_title">
-                <svg width="50" height="50">
-                    <image href="image/icon.png" height="50" width="50"/>
-                </svg>
-                <p>GODAN account로 로그인</p>
-            </div>
-            <h3>해당 서비스를 이용하기 위해 로그인이 필요합니다.</h3>
-        </div><br>
+            <h1>Simple Login page</h1>
+        </div><hr></body><!-- 여기에 여백 매우 크게 생기는디 고처야 됨. 이것은 다음에 내가 하겠지 :D?-->
 
         <!-- login 되있으면 표시되는 상자 -->
         <div class="logined" id="logined">
-            <h2>이미 로그인이 되어있습니다.</h2>
-            <h3>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h3>
-        </div><br>
+            <h2><mark>이미 로그인이 되어있습니다.<mark></h2>
+            <h4>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h3>
+        </div><hr class="logined">
 
         <!-- login box -->
         <div id="login_box" class="login_box">
-                <label for="fname">ID or Email</label>
-                <input type="text" id="id"><br/>
-                <label for="lname">Password</label>
-                <input type="text" id="password">
+                <label>ID or Email
+                    <input type="text" id="id"
+                    placeholder="Email" autocomplete="email">
+                </label>
+                <label>Password
+                    <input type="password" id="password"
+                    placeholder="Password" autocomplete="current-password">
+                </label>
                 <button id="login_bt">Login</button>
+                <button class="outline secondary" id="usewithoutlogin">로그인 없이 사용</button>
             
-        </div>
-
-        <br><br><br>
+        </div><hr>
+        <!-- 나중에 https://picocss.com/docs/forms/input#validation-states 같은거 넣어보자 -->
 
         <!-- id and pw 4 test -->
         <div class="title">

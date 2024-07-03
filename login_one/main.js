@@ -8,7 +8,7 @@
         }
 
 
-        // 로그인 버튼 함수
+        // 로그인 버튼 함수 <<<<--- 이거 작동 안함 고처야 하지만 난 졸려서 자려간다 ps.내일 기말고사디 이러고 있다
         function login() {
             console.log('Move to login page...')
             window.location.href = 'main.html';
@@ -62,6 +62,11 @@
                 }
             });
 
+            // 로그인 없이 사용
+            document.getElementById('usewithoutlogin').addEventListener('click', function(){
+                window.location.href = 'main_page.html';
+            })
+
 
             //alert1 display
 
@@ -97,11 +102,12 @@
             function loginck() {
                 if (localStorage.getItem('isLoggedIn') == 'true') {
                     // $('#logined').css('display','block')
-                    document.getElementById('logined').style.display = 'block'
+                    document.getElementById('logined').style.display = 'block';
+                    document.getElementById('usewithoutlogin').style.display = 'none';
                 }
             }
 
             //페이지 로드시 loginck 실행
-            document.addEventListener('DOMContentLoaded', loginck())
+            document.addEventListener('DOMContentLoaded', loginck());
 
 

@@ -15,5 +15,6 @@
 - 2024/06/27 메인 페이지 만듬
 - 2024/06/28 이재 로그인 한 상태로 main.html 들어가면 안내문 뜸
 - 2024/06/30 메인 페이지 css 변경, 요소 추가, javascript 모두 main.js로 이동
+- 2024/06/30 (test) pico css 적용, 로그인 없이 사용버튼 만듬, password 입력칸 type password로 변경(현재 안되는 기능이 몇몇있음)
 - to be continued...
 
