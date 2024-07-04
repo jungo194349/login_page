@@ -9,20 +9,21 @@
     </head>
     <body>
 
-        <!-- new overlay (aka. alert_box_1) -->
-        <div class="overlay" id="overlay">
-            <div class="box">
-                <h2 id="alert_box_1_type">Empty Overlay Box</h2>
-                <p id="alert_box_1_title" class="alert_box_1_title">Error : Empty Message</p>
-                <button class="close-btn" id="close-btn">Close</button>
-            </div>
-        </div>
-    
+        <!-- New dialog (called alert_box) -->
+        <dialog id='overlay' open=false><article>
+            <header>
+                <p><strong id="alert_box_1_type">empty box</strong></p>
+            </header>
+            <p id="alert_box_1_title">empty :P</p>
+            <footer>
+                <button class="close-btn" id="close-btn">empty</button>
+            </footer>
+        </article></dialog>
+
         <!-- title -->
         <div class="title">
             <h1>Simple Login page</h1>
-        </div><hr></body><!-- 여기에 여백 매우 크게 생기는디 고처야 됨. 이것은 다음에 내가 하겠지 :D?-->
-
+        </div><hr>
         <!-- login 되있으면 표시되는 상자 -->
         <div class="logined" id="logined">
             <h2><mark>이미 로그인이 되어있습니다.<mark></h2>
@@ -33,11 +34,13 @@
         <div id="login_box" class="login_box">
                 <label>ID or Email
                     <input type="text" id="id"
-                    placeholder="Email" autocomplete="email">
+                    placeholder="Email" autocomplete="email" aria-describedby="helper1">
+                    <small id="helper1">비어있는 메시지</small>
                 </label>
                 <label>Password
                     <input type="password" id="password"
-                    placeholder="Password" autocomplete="current-password">
+                    placeholder="Password" autocomplete="current-password" aria-describedby="helper2">
+                    <small id="helper2">비어있는 메시지</small>
                 </label>
                 <button id="login_bt">Login</button>
                 <button class="outline secondary" id="usewithoutlogin">로그인 없이 사용</button>

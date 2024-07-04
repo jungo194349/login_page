@@ -1,92 +1,19 @@
 .login_box {
-    /* background: lightcyan; */
-    /* color: black; */
     padding: 15px;
-    border-radius: 8px;
 }
 .title {
-    /* background: lightcyan; */
     padding: 15px;
-    border-radius: 8px;
 }
 .logined {
-    /* background: orange; */
     padding: 15px;
-    border-radius: 8px;
     display: none;
-}
-
-/* The overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Make sure it covers everything else */
-    display: none; /* Initially hidden */
-}
-
-/* The box */
-.box {
-    background-color: rgb(18, 24, 28);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    text-align: center;
 }
 .close-btn {
     background-color: #ff5c5c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
 }
 .hidden {
   display: none;
 }
-/* 이전에 쓰던것 이지만 혹시 몰라 남겨둔것 
-    여기 아래 아무것도 없고 새로운 css 속성은 이 줄 위에 만들것
-.title_title {
-    display: table;
-    font-size: 40px;
-    text-align: center;
+#helper1 , #helper2 {
+    display: none;
 }
-.title_title p{
-    display: table-cell;
-
-}
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid cyan;
-    border-radius: 8px;
-  }
-input[type=text]:focus {
-    border: 3px solid darkcyan;
-    background-color: rgb(206, 243, 255);
-  }
-#login_bt, .login_bt {
-    transition: background-color 0.5s ease;
-    background-color: white;
-    border: 2px solid cyan;
-    color: black;
-    padding: 12px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
-  }
-#login_bt:hover, .login_bt:hover {
-    background-color: rgb(206, 243, 255);
-  }
-
-*/
