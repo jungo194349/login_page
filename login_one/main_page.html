@@ -3,19 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <title>Main page</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel=""
+        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>    
     </head>
     <body>
-        <div class="title">
-            <p>Main Page</p>
-            <div id="loginForm" class="hidden">
-                <button class='login_bt' onclick="login()">Login</button>
-            </div>
-            <div id="logoutForm" class="hidden">
-                <button class='login_bt' onclick="logout()">Logout</button>
-            </div>
-        </div><br>
+                <!-- 내비게이션 바 -->
+        <nav>
+            <ul>
+                <li><strong>Simple Main Page</strong></li>
+            </ul>
+            <ul>
+                <div id="loginForm" class="hidden">
+                    <li><a onclick="movetologin()">Login</a></li>
+                </div>
+                <div id="logoutForm" class="hidden">
+                    <li><a onclick="logout()">Logout</a></li>
+                </div>
+            </ul>
+        </nav><hr>
         <div class="title">
             <p>(메인 패이지 내용)</p>
         </div>
