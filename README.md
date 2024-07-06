@@ -17,5 +17,6 @@
 - 2024/06/30 메인 페이지 css 변경, 요소 추가, javascript 모두 main.js로 이동
 - 2024/06/30 (test) pico css 적용, 로그인 없이 사용버튼 만듬, password 입력칸 type password로 변경(현재 안되는 기능이 몇몇있음)
 - 2024/07/04 (test) alert1을 <dialog>로 바꿈, 안쓰는 css정리, 일부 텍스트 변경
+- 2024/07/06 <nav>로 title 대채, console.log 추가
 - to be continued...
 

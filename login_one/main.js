@@ -90,7 +90,7 @@
                 $('#close-btn').css('background-color', bgcolor);
                 $('#close-btn').html(button_text)
                 $('#alert_box_1_type').text(type);
-                console.log("alert1 updated staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor + ", type : " + type)
+                console.log("alert1 updated > staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor + " , type : " + type + ' , button text : ' + button_text);
             }
 
             // helper display
@@ -103,6 +103,7 @@
                 }
                 $(helper).css('display',display);
                 $(helper).html(text);
+                console.log('helper updated > which helper : ' + what + ' , display : ' + display + ' , text : ' + text);
             }
 
             //ck id and password

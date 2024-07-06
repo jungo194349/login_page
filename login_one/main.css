@@ -17,3 +17,7 @@
 #helper1 , #helper2 {
     display: none;
 }
+nav {
+    padding-left: 15px;
+    padding-right: 15px;
+}
