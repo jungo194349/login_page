@@ -1,10 +1,10 @@
 # login_test
 
-## What is this project?
+## What is this repo?
 
-첫번째 코딩 프로젝트 __**'로그인'**__
-
-과연 __성공적인__ 로그인 페이지를 만들수 있을까?
+그냥 만들어본 로그인 시스템
+물론 __DB__같은건 없다.
+**비밀번호랑 ID는 Admin임**
 
 ## timeline
 
@@ -18,5 +18,6 @@
 - 2024/06/30 (test) pico css 적용, 로그인 없이 사용버튼 만듬, password 입력칸 type password로 변경(현재 안되는 기능이 몇몇있음)
 - 2024/07/04 (test) alert1을 <dialog>로 바꿈, 안쓰는 css정리, 일부 텍스트 변경
 - 2024/07/06 <nav>로 title 대채, console.log 추가
+- 2024/07/13 class, 함수명 정리
 - to be continued...
 
