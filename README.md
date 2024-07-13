@@ -1,5 +1,8 @@
 # login_test
 
+## 바로가기
+[여기를 눌려 사이트로 바로 이동](https://jungo194349.github.io/login_page/login_one/main.html)
+
 ## What is this repo?
 
 그냥 만들어본 로그인 시스템
