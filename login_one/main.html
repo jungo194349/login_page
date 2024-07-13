@@ -2,25 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Login by GODAN account</title>
+        <title>Simple Login Page</title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
 </head>
     </head>
     <body>
 
-        <!-- New dialog (called alert_box) -->
-        <dialog id='overlay' open=false><article>
-            <header>
-                <p><strong id="alert_box_1_type">empty box</strong></p>
-            </header>
-            <p id="alert_box_1_title">empty :P</p>
-            <footer>
-                <button class="close-btn" id="close-btn">empty</button>
-            </footer>
-        </article></dialog>
+        <!-- Dialog -->
+
+        <dialog id='dialog' open=false>
+            <article>
+                <header>
+                    <p><strong id="dialog_title"></strong></p>
+                </header>
+                <p id="dialog_message">ddd</p>
+                <footer>
+                    <button id="dialog_close_bt"></button>
+                </footer>
+            </article>
+        </dialog>
 
         <!-- 내비게이션 바 -->
+
         <nav>
             <ul>
               <li><strong>Simple Login Page</strong></li>
@@ -29,41 +33,44 @@
               <li><a href="main_page.html">Main page</a></li>
             </ul>
         </nav><hr>
-
-        <!-- login 되있으면 표시되는 상자 -->
-        <div class="logined" id="logined">
+ 
+        <!-- 로그인 되어있음 UI -->
+        
+        <div class="hidden" id="logined">
+            <article>
             <h2><mark>이미 로그인이 되어있습니다.<mark></h2>
-            <h4>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h3>
-        </div><hr class="logined">
+            <h4>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h4>
+            </article>
+        </div><hr class="hidden">
 
-        <!-- login box -->
-        <div id="login_box" class="login_box">
-                <label>ID or Email
-                    <input type="text" id="id"
-                    placeholder="Email" autocomplete="email" aria-describedby="helper1">
-                    <small id="helper1">비어있는 메시지</small>
-                </label>
-                <label>Password
-                    <input type="password" id="password"
-                    placeholder="Password" autocomplete="current-password" aria-describedby="helper2">
-                    <small id="helper2">비어있는 메시지</small>
-                </label>
-                <button id="login_bt">Login</button>
-                <button class="outline secondary" id="usewithoutlogin">로그인 없이 사용</button>
-            
+        <!-- 로그인 박스 -->
+
+        <div>
+            <label>ID 또는 이메일</label>
+                <input type="text" id="id" placeholder="ID 또는 이메일" autocomplete="email" aria-describedby="helper1">
+                <small id="helper1"></small>
+            </label>
+            <label>비밀번호
+                <input type="password" id="password" placeholder="비밀번호" autocomplete="current-password" aria-describedby="helper2">
+                <small id="helper2"></small>
+            </label>
+            <button id="login_bt">로그인</button>
+            <button class="outline secondary" id="usewithoutlogin">로그인 없이 사용</button>
         </div><hr>
-        <!-- 나중에 https://picocss.com/docs/forms/input#validation-states 같은거 넣어보자 -->
 
-        <!-- id and pw 4 test -->
-        <div class="title">
-            <p>test용 ID & PW</p>
-            <p>ID : Admin , PW : Admin</p>
+        <!-- 태스트용 ID & PW -->
+
+        <div>
+            <p>태스트용 ID & PW<br>ID : Admin , PW : Admin</p>
         </div>
 
         <!-- main.js 첨부 -->
+
         <script src="main.js"></script>
+
         <!-- jquery -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     </body>
 </html>

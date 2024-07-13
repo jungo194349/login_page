@@ -1,143 +1,149 @@
-       //for main_page.html
-       
-       // 로그인 상태를 확인하고 UI를 업데이트하는 함수
-        function checkLoginStatus() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-            document.getElementById('loginForm').classList.toggle('hidden', isLoggedIn);
-            document.getElementById('logoutForm').classList.toggle('hidden', !isLoggedIn);
+    // 로그인 상태를 확인하고 UI를 업데이트하는 함수
+
+    function checkLoginStatus() {
+        // const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        // document.getElementById('loginForm').classList.toggle('hidden', isLoggedIn);
+        // document.getElementById('logoutForm').classList.toggle('hidden', !isLoggedIn);
+        var isLoggedIn = localStorage.getItem('isLoggedIn')
+        if (isLoggedIn == 'true') {
+            $('#loginForm').css('display', 'none');
+            $('#logoutForm').css('display', 'block');
+        } else {
+            $('#loginForm').css('display', 'block');
+            $('#logoutForm').css('display', 'none');
         }
+    }
 
 
-        // 로그인 버튼 함수
-        function movetologin() {
-            console.log('Move to login page...')
-            window.location.href = 'main.html';
-        }
+    // 로그인 버튼 함수
 
-        // 로그아웃 버튼 함수
-        function logout() {
-            console.log('Logout complete')
-            localStorage.setItem('isLoggedIn', 'false');
-            checkLoginStatus();
-        }
+    function movetologin() {
+        console.log('Move to login page...')
+        window.location.href = 'main.html';
+    }
 
-        // 페이지 로드 시 로그인 상태 확인
-        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+    // 로그아웃 버튼 함수
 
-        //for main.html
+     function logout() {
+        console.log('Logout complete')
+        localStorage.setItem('isLoggedIn', 'false');
+        checkLoginStatus();
+    }
 
+    // 페이지 로드 시 로그인 상태 확인
+
+    document.addEventListener('DOMContentLoaded', checkLoginStatus);
                     
-            // alert close button
+    // dialog 닫기 버튼
 
-            document.getElementById("close-btn").addEventListener('click', function(){
-                alert1(false)
-                if (localStorage.getItem('isLoggedIn') == 'true') {
-                    window.location.href = 'main_page.html';
-                }
-            });
+    document.getElementById("dialog_close_bt").addEventListener('click', function(){
+        dialog(false);
+         if (localStorage.getItem('isLoggedIn') == 'true') {
+            window.location.href = 'main_page.html';
+        }
+    });
 
-            // if pw or id not empty
+     // ID나 비밀번호가 비어있는지 확인
 
-            document.getElementById('login_bt').addEventListener('click', function(){
-                id_value = document.getElementById("id").value
-                pw_value = document.getElementById("password").value
-                if (id_value == "") {
-                    if (pw_value == ""){
-                    //id랑 p둘다 없을때
-                    $('#id').attr('aria-invalid',true);
-                    $('#password').attr('aria-invalid',true);
-                    helper_display(1, 'block', 'ID가 비어있습니다.');
-                    helper_display(2, 'block', 'Password가 비어있습니다.');
-                    alert1(true, 'ID와 Password가 비어있습니다.', 'rgb(252, 103, 103', '로그인 실패', '닫기');
-                    console.warn("Login failed : ID&Password Empty");
-                    } else {
-                    //id만 없을때
-                    $('#id').attr('aria-invalid',true)
-                    $('#password').attr('aria-invalid',null)
-                    helper_display(1, 'block', 'ID가 비어있습니다.');
-                    helper_display(2, 'none', null);
-                    alert1(true, 'ID가 비어있습니다.', 'rgb(252, 103, 103', '로그인 실패','닫기');
-                    console.warn("Login failed : ID Empty") 
-                    }
-                } else {
-                    if (pw_value == "") {
-                        //password만 없을때
-                        $('#id').attr('aria-invalid',null)
-                        $('#password').attr('aria-invalid',true)
-                        helper_display(1, 'none', null);
-                        helper_display(2, 'block', 'Password가 비어있습니다.');
-                        alert1(true, 'Password가 비어있습니다.', 'rgb(252, 103, 103', '로그인 실패','닫기');
-                        console.warn("Login failed : Password Empty")
-                    } else {
-                        login()
-                    }
-                }
-            });
-
-            // 로그인 없이 사용
-            document.getElementById('usewithoutlogin').addEventListener('click', function(){
-                window.location.href = 'main_page.html';
-            })
-
-
-            //alert1 display
-
-            function alert1(statue, display, bgcolor, type, button_text){
-                // document.getElementById('overlay').style.display = 'flex';
-                $('#overlay').attr('open',statue)
-                // $('#alert_box_1').css('display', statue);
-                $('#alert_box_1_title').text(display);
-                $('#close-btn').css('background-color', bgcolor);
-                $('#close-btn').html(button_text)
-                $('#alert_box_1_type').text(type);
-                console.log("alert1 updated > staute : " + statue + " , display : [" + display + "] , background color : " + bgcolor + " , type : " + type + ' , button text : ' + button_text);
+    document.getElementById('login_bt').addEventListener('click', function(){
+        id_value = document.getElementById("id").value
+        pw_value = document.getElementById("password").value
+        if (id_value == "") {
+             if (pw_value == ""){
+                //id랑 pw둘다 없을때
+                $('#id').attr('aria-invalid',true);
+                $('#password').attr('aria-invalid',true);
+                helper_display(1, 'block', 'ID가 비어있습니다.');
+                helper_display(2, 'block', '비밀번호가 비어있습니다.');
+                dialog(true, 'ID와 비밀번호가 비어있습니다.', 'rgb(252, 103, 103', '로그인 실패', '닫기');
+                console.warn("로그인 실패 : ID와 비밀번호가 비어있습니다.");
+             } else {
+                //id만 없을때
+                $('#id').attr('aria-invalid',true);
+                $('#password').attr('aria-invalid',null);
+                helper_display(1, 'block', 'ID가 비어있습니다.');
+                helper_display(2, 'none', null);
+                dialog(true, 'ID가 비어있습니다.', 'rgb(252, 103, 103', '로그인 실패','닫기');
+                console.warn("로그인 실패 : ID가 비어있습니다.") ;
             }
-
-            // helper display
-
-            function helper_display(what,display,text){
-                if (what == 1) {
-                    helper = '#helper1'
-                } else {
-                    helper = '#helper2'
-                }
-                $(helper).css('display',display);
-                $(helper).html(text);
-                console.log('helper updated > which helper : ' + what + ' , display : ' + display + ' , text : ' + text);
+        } else {
+            if (pw_value == "") {
+                //password만 없을때
+                $('#id').attr('aria-invalid',null);
+                $('#password').attr('aria-invalid',true);
+                helper_display(1, 'none', null);
+                helper_display(2, 'block', '비밀번호가 비어있습니다.');
+                dialog(true, '비밀번호가 비어있습니다.', 'rgb(252, 103, 103', '로그인 실패','닫기');
+                console.warn("로그인 실패 : 비밀번호가 비어있습니다.");
+            } else {
+                login();
             }
+        }
+    });
 
-            //ck id and password
+    // 로그인 없이 사용 버튼
+    document.getElementById('usewithoutlogin').addEventListener('click', function(){
+        window.location.href = 'main_page.html';
+    });
 
-            function login() {
-                id_value = document.getElementById("id").value
-                pw_value = document.getElementById("password").value
-                if (id_value == 'Admin' && pw_value == 'Admin') {
-                    // id & pw가 맞음
-                    localStorage.setItem('isLoggedIn', 'true');
-                    console.log('now isLoggedIn is : '+ localStorage.getItem('isLoggedIn') )
-                    alert1(true, '로그인 완료.', 'rgb(143, 154, 255', '좋은 소식!', '완료');
-                    
-                } else {
-                    // id or pw가 틀림
-                    $('#id').attr('aria-invalid',true)
-                    $('#password').attr('aria-invalid',true)
-                    helper_display(1,'block','ID가 존재하지 않거나 Password가 틀렸습니다.');
-                    helper_display(2,'block','ID가 존재하지 않거나 Password가 틀렸습니다.');
-                    alert1(true, 'ID가 존재하지 않거나 Password가 틀렸습니다.', 'rgb(252, 103, 103', '로그인 실패', '닫기');
-                    console.warn("Login failed : ID or Password incorrect")
-                }
-            }
 
-            //로그인 되있으면 안내문 표시
-            function loginck() {
-                if (localStorage.getItem('isLoggedIn') == 'true') {
-                    // $('#logined').css('display','block')
-                    document.getElementById('logined').style.display = 'block';
-                    document.getElementById('usewithoutlogin').style.display = 'none';
-                }
-            }
+    //dialog 표시
 
-            //페이지 로드시 loginck 실행
-            document.addEventListener('DOMContentLoaded', loginck());
+    function dialog(statue, message, button_color, title, button_text){
+        $('#dialog').attr('open',statue);
+        $('#dialog_message').html(message);
+        $('#dialog_close_bt').css('background-color', button_color);
+        $('#dialog_close_bt').html(button_text);
+        $('#dialog_title').text(title);
+        console.log("현재 dialog의 상태 > 표시 : " + statue + " , 메시지 텍스트 : " + message + " , 버튼 색상 : " + button_color + " , 표시 제목 : " + title + ' , 버튼 텍스트 : ' + button_text);
+    }
+
+    // helper 표시
+
+    function helper_display(which, statue, message){
+        if (which == 1) {
+            helper = '#helper1'
+        } else {
+            helper = '#helper2'
+        }
+        $(helper).css('display',statue);
+        $(helper).html(message);
+        console.log('현재 helper의 상태 > 몇번 helper : ' + which + ' , 표시 : ' + statue + ' , text : ' + message);
+    }
+
+    //로그인시 ID와 비밀번호 확인
+
+    function login() {
+        id_value = document.getElementById("id").value
+        pw_value = document.getElementById("password").value
+        if (id_value == 'Admin' && pw_value == 'Admin') {
+            // id && pw가 맞음
+            localStorage.setItem('isLoggedIn', 'true');
+            console.log('로그인 상태 : '+ localStorage.getItem('isLoggedIn') )
+            dialog(true, '로그인 완료.', 'rgb(143, 154, 255', '좋은 소식!', '완료');
+                 
+        } else {
+            // id || pw가 틀림
+            $('#id').attr('aria-invalid',true)
+            $('#password').attr('aria-invalid',true)
+            helper_display(1,'block','ID가 존재하지 않거나 비밀번호가 틀렸습니다.');
+            helper_display(2,'block','ID가 존재하지 않거나 비밀번호가 틀렸습니다.');
+            dialog(true, 'ID가 존재하지 않거나 비밀번호가 틀렸습니다.', 'rgb(252, 103, 103', '로그인 실패', '닫기');
+            console.warn("로그인 실패 : ID가 존재하지 않거나 비밀번호가 틀렸습니다.")
+        }
+    }
+
+    //로그인 되있으면 UI 표시
+
+    function loginck() {
+        if (localStorage.getItem('isLoggedIn') == 'true') {
+            document.getElementById('logined').style.display = 'block';
+            document.getElementById('usewithoutlogin').style.display = 'none';
+        }
+    }
+
+    //페이지 로드시 loginck 실행
+
+    document.addEventListener('DOMContentLoaded', loginck());
 
 

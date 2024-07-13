@@ -1,23 +1,13 @@
-.login_box {
+div {
     padding: 15px;
 }
-.title {
-    padding: 15px;
-}
-.logined {
-    padding: 15px;
-    display: none;
-}
-.close-btn {
-    background-color: #ff5c5c;
-}
-.hidden {
+.hidden, #helper1 , #helper2 {
   display: none;
-}
-#helper1 , #helper2 {
-    display: none;
 }
 nav {
     padding-left: 15px;
     padding-right: 15px;
+}
+dialog {
+    width: 90%;
 }
