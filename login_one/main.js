@@ -30,10 +30,7 @@
         checkLoginStatus();
     }
 
-    // 페이지 로드 시 로그인 상태 확인
 
-    document.addEventListener('DOMContentLoaded', checkLoginStatus);
-                    
     // dialog 닫기 버튼
 
     document.getElementById("dialog_close_bt").addEventListener('click', function(){
@@ -81,10 +78,15 @@
         }
     });
 
-    // 로그인 없이 사용 버튼
+    // 로그인 없이 사용 버튼, main으로 이동
     document.getElementById('usewithoutlogin').addEventListener('click', function(){
         window.location.href = 'main_page.html';
     });
+
+    // main으로 이동
+    document.getElementById('movetomain').addEventListener('click',function(){
+        window.location.href = 'main_page.html';
+    })
 
 
     //dialog 표시
@@ -141,9 +143,4 @@
             document.getElementById('usewithoutlogin').style.display = 'none';
         }
     }
-
-    //페이지 로드시 loginck 실행
-
-    document.addEventListener('DOMContentLoaded', loginck());
-
 

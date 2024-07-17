@@ -22,5 +22,6 @@
 - 2024/07/04 (test) alert1을 <dialog>로 바꿈, 안쓰는 css정리, 일부 텍스트 변경
 - 2024/07/06 <nav>로 title 대채, console.log 추가
 - 2024/07/13 class, 함수명 정리
+- 2024/07/17 모바일, PC UI 최적화, nav 텍스트 링크 버튼으로 바꿈
 - to be continued...
 

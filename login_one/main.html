@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Simple Login Page</title>
+        <link rel="icon" href="https://bit.ly/4femRmq" type="image/png">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
-</head>
     </head>
     <body>
 
@@ -30,7 +31,7 @@
               <li><strong>Simple Login Page</strong></li>
             </ul>
             <ul>
-              <li><a href="main_page.html">Main page</a></li>
+              <li><button id="movetomain">Main page</button></li>
             </ul>
         </nav><hr>
  
@@ -41,7 +42,7 @@
             <h2><mark>이미 로그인이 되어있습니다.<mark></h2>
             <h4>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h4>
             </article>
-        </div><hr class="hidden">
+        </div>
 
         <!-- 로그인 박스 -->
 
@@ -67,6 +68,10 @@
         <!-- main.js 첨부 -->
 
         <script src="main.js"></script>
+        <script>
+            //페이지 로드시 loginck 실행
+            document.addEventListener('DOMContentLoaded', loginck());
+        </script>
 
         <!-- jquery -->
 
