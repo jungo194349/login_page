@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Signup Page</title>
+        <link rel="icon" href="https://bit.ly/4femRmq" type="image/png">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    </head>
+    <body>
+
+        <!-- Dialog -->
+
+        <dialog id='dialog' open=false>
+            <article>
+                <header>
+                    <p><strong id="dialog_title"></strong></p>
+                </header>
+                <p id="dialog_message"></p>
+                <footer>
+                    <button id="dialog_close_bt"></button>
+                </footer>
+            </article>
+        </dialog>
+
+        <!-- 내비게이션 바 -->
+
+        <nav>
+            <ul>
+              <li><strong>Simple signup Page</strong></li>
+            </ul>
+            <ul>
+              <li><button id="movetomain">Login</button></li>
+            </ul>
+        </nav><hr>
+ 
+        <!-- 로그인 되어있음 UI -->
+        
+        <div class="hidden" id="logined">
+            <article>
+            <h2><mark>이미 로그인이 되어있습니다.<mark></h2>
+            <h4>메인 페이지로 가려면 <a href="main_page.html">여기</a>를 누르세요.</h4>
+            </article>
+        </div>
+
+        <!-- 회원가입 박스 -->
+
+        <div>
+            <label>성 (first name)
+                <input type="text" id="first_name" placeholder="성" aria-describedby="helper1" autocomplete="given-name">
+                <small id="helper1"></small>
+            </label>
+            <label>이름 (last name)
+                <input type="text" id="last_name" placeholder="이름" aria-describedby="helper2" autocomplete="family-name">
+                <small id="helper2"></small>
+            </label>
+            <label>생년월일
+                <input type="date" id="born_date" aria-describedby="helper3">
+                <small id="helper3"></small>
+            </label>
+            <label>성별 (gender)
+                <select id='gender' aria-label="성별" required aria-describedby="helper4">
+                    <option selected disabled value="">성별을 선택하세요...</option>
+                    <option value="man">남성</option>
+                    <option value="woman">여성</option>
+                    <option value="other">기타 성별</option>
+                    <option value="secret">밝히고 싶지 않음</option>
+                    <option value="don't know">모름</option>
+                </select>
+                <small id="helper4"></small>
+            </label>
+            <label>ID
+                <input type="text" id="id" placeholder="ID" aria-describedby="helper5" autocomplete="username">
+                <small id="helper5"></small>
+            </label>
+            <label>이메일
+                <input type="text" id="email" placeholder="이메일" aria-describedby="helper6" autocomplete="email">
+                <small id="helper6"></small>
+            </label>
+            <label>비밀번호
+                <input type="password" id="password" placeholder="비밀번호" aria-describedby="helper7" autocomplete="new-password">
+                <small id="helper7"></small>
+            </label>
+            <label>비밀번호 다시 입력
+                <input type="password" id="password_rewrite" placeholder="비밀번호 다시 입력" aria-describedby="helper8" autocomplete="new-password">
+                <small id="helper8"></small>
+            </label>
+            <button id="signup">게정 만들기</button>
+            <button class="outline secondary" onclick="movetologin()">로그인</button>
+        </div><hr>
+
+        <!-- js 첨부 -->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="main.js"></script>
+        <script>
+            //페이지 로드시 loginck 실행
+            document.addEventListener('DOMContentLoaded', loginck());
+            // 회원가입 버튼
+            document.getElementById('signup').addEventListener('click', function(){
+                signup()
+            })
+        </script>
+
+    </body>
+</html>

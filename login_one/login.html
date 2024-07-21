@@ -55,8 +55,9 @@
                 <input type="password" id="password" placeholder="비밀번호" autocomplete="current-password" aria-describedby="helper2">
                 <small id="helper2"></small>
             </label>
-            <button id="login_bt">로그인</button>
-            <button class="outline secondary" id="usewithoutlogin">로그인 없이 사용</button>
+            <button onclick="login()">로그인</button>
+            <button class="outline secondary" id="movetosignup">회원가입</button>
+            <a id="usewithoutlogin" class="secondary" href="main_page.html">로그인 없이 사용</a>
         </div><hr>
 
         <!-- 태스트용 ID & PW -->
@@ -65,17 +66,14 @@
             <p>태스트용 ID & PW<br>ID : Admin , PW : Admin</p>
         </div>
 
-        <!-- main.js 첨부 -->
+        <!-- js 첨부 -->
 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="main.js"></script>
         <script>
             //페이지 로드시 loginck 실행
             document.addEventListener('DOMContentLoaded', loginck());
-        </script>
-
-        <!-- jquery -->
-
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        </script>     
 
     </body>
 </html>

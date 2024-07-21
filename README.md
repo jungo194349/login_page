@@ -6,7 +6,7 @@
 ## What is this repo?
 
 그냥 만들어본 로그인 시스템
-물론 __DB__같은건 없다.
+물론 DB같은건 없다.
 **비밀번호랑 ID는 Admin임**
 
 ## timeline
@@ -23,5 +23,6 @@
 - 2024/07/06 <nav>로 title 대채, console.log 추가
 - 2024/07/13 class, 함수명 정리
 - 2024/07/17 모바일, PC UI 최적화, nav 텍스트 링크 버튼으로 바꿈
+- 2024/07/21 **signup 기능 완성**, 파일명 변경
 - to be continued...
 

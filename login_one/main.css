@@ -5,9 +5,27 @@ nav {
     padding-left: 15px;
     padding-right: 15px;
 }
+div {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 @media only screen and (min-width: 1024px) {
     div {
         margin-left: 10%;
         margin-right: 10%;
+        padding-left: 0px;
+        padding-right: 0px;
     }
+}
+article  {
+    margin: 15px;
+    height: 250px;
+}
+.container3070 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.container5050 {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
